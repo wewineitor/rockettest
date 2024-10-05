@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rocket.rockettest.repository.TaskRepository">
+    <select id="findAll" resultType="com.rocket.rockettest.entity.Task">
+        SELECT id, name, description, initial_date AS initialDate
+        FROM tasks
+    </select>
+
+    <insert id="save" parameterType="com.rocket.rockettest.entity.Task">
+        INSERT INTO tasks (name, description, initial_date)
+        VALUES (#{name}, #{description}, #{initialDate})
+    </insert>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM tasks WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="map">
+        UPDATE tasks
+        SET name = #{task.name}, description = #{task.description}, initial_date = #{task.initialDate}
+        WHERE id = #{id}
+    </update>
+</mapper>
