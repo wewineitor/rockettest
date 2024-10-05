@@ -15,11 +15,6 @@ Este proyecto es un aplicativo web desarrollado utilizando Java 8 y Spring Boot 
 
 ## ⚡ Instalacion
 
-
-```console
-mvn clean install
-```
-
 La base de datos ya está alojada en mi dominio, por lo que no es necesario crear una instancia local para probar la aplicación. Sin embargo, si necesitas configurar una base de datos local, puedes crear la siguiente tabla:
 ```
 CREATE TABLE tasks (
